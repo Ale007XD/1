@@ -1,74 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<title>Изучение вьетнамского языка</title>
-<style>
-body {
-  font-family: sans-serif;
-}
-.card {
-  width: 300px;
-  height: 200px;
-  border: 1px solid #ccc;
-  margin: 20px auto;
-  text-align: center;
-  line-height: 100px;
-  font-size: 24px;
-  cursor: pointer;
-}
-.card.flipped {
-  background-color: #f0f0f0;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Учим вьетнамский язык с помощью карточек и TTS">
+    <meta name="keywords" content="вьетнамский, язык, карточки, обучение, TTS">
+    <title>Учим вьетнамский!</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<h1>Изучение вьетнамского языка</h1>
-
-<div id="cards"></div>
-
-<script>
-const words = [
-  { vietnamese: "tôi", russian: "я" },
-  { vietnamese: "bạn", russian: "ты" },
-  // ... (добавьте остальные 98 слов)
-];
-
-const phrases = [
-  { vietnamese: "xin chào", russian: "здравствуйте" },
-  { vietnamese: "cảm ơn", russian: "спасибо" },
-  // ... (добавьте остальные 18 словосочетаний)
-];
-
-const cardsContainer = document.getElementById("cards");
-
-function createCard(item) {
-  const card = document.createElement("div");
-  card.classList.add("card");
-  card.dataset.front = item.vietnamese;
-  card.dataset.back = item.russian;
-  card.textContent = item.vietnamese;
-
-  card.addEventListener("click", () => {
-    card.classList.toggle("flipped");
-    if (card.classList.contains("flipped")) {
-      card.textContent = card.dataset.back;
-    } else {
-      card.textContent = card.dataset.front;
-    }
-  });
-
-  return card;
-}
-
-words.forEach(word => {
-  cardsContainer.appendChild(createCard(word));
-});
-
-phrases.forEach(phrase => {
-  cardsContainer.appendChild(createCard(phrase));
-});
-</script>
-
+    <h1>Привет, юный друг! Давай учить вьетнамский!</h1>
+    <div id="cards"></div>
+    <script src="script.js"></script>
 </body>
 </html>
